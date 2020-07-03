@@ -1,0 +1,17 @@
+version: '3' # composeファイルのバージョン指定
+services:
+  app: # service（コンテナ)名
+    build: . # ビルドに使用するDockerfileがあるディレクトリ指定
+    tty: true # コンテナの起動永続化
+    volumes:
+      - .:/go/src/work # マウントディレクトリ指定
+    ports:
+      - "3000:3000" #ポート指定
+
+
+# docker-compose up　を実行
+# docker exec -it golang_app_1 /bin/bash　を実行
+
+# もしくは
+
+# docker-compose exec app /bin/bash　でもよい
